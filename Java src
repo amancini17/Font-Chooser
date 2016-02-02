@@ -136,3 +136,21 @@ public static void main ( String [] args )
     getContentPane().add(fontLabel);
     fontLabel.setBounds(400,200,700,500);
   }
+  
+  public void actionPerformed(ActionEvent evt) {
+    JComboBox source = (JComboBox) evt.getSource();
+
+    if (source == fontstyleComboBox) 
+    {
+    	String font = (String) source.getSelectedItem();
+    	fontLabel.setFont(new Font(font, Font.PLAIN, size));
+    	font = font;
+    }
+    if (source == size)
+    {
+    	//int size = (int) source.getSelectedItem();
+    	//fontLabel.setFont(new Font(tfont,Font.PLAIN,Size));
+    	//size = size;
+    }
+  }
+ 
