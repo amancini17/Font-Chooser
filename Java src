@@ -44,13 +44,36 @@ public class FontChooser extends JFrame implements Action Listener
     uvw wW gq9 2z 5s il17|!j oO08 `'" ;:,. m nn rn {[()]}u");
    
    
-   public static void main ( String [] args )
+  private JComboBox fontstyleComboBox;
+  private JComboBox fontsize;
+  int size = 12;
+  String font = "Arial";
+  private JButton FGroundButton = new JButton("Foreground Color");
+  private JButton BGroundButton = new JButton ("Background Color");
+  private JButton bold = new JButton("B");
+  private JButton italic = new JButton ("I");
+  private JButton underline = new JButton("U");
+ 
+  public FontChooser() { 
+    setTitle("Font Chooser");
+    setSize(1500, 1000);
+    addWindowListener(new WindowAdapter() {
+      public void windowClosing(WindowEvent e) {
+        System.exit(0);
+      }
+    }); 
+    
+   fontstyleComboBox = new JComboBox();
+   fontstyleComboBox.setEditable(true);
+   fontstyleComboBox.addActionListener(this);
+   
+public static void main ( String [] args )
       {
       GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
       String[] names = ge.getAvailableFontFamilyNames();
       for ( int i=0; i<names.length; i++ )
          {
-             System.out.println( names[i] );
+             fontstyleComboBox.addItem( names[i] );
          }
       }
 }
