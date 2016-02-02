@@ -154,3 +154,29 @@ public static void main ( String [] args )
     }
   }
  
+public static void main(String[] args) {
+    JFrame frame = new Trial2();
+    frame.show();
+  }
+
+private class ButtonListener implements ActionListener {
+	    public void actionPerformed(ActionEvent e) {
+	    	  JButton src = (JButton) e.getSource();
+
+	    	    if (src == ForeGButton) 
+	    	    {
+	    	    	 Color C = JColorChooser.showDialog(null, "Choose Foreground Color", fontLabel.getForeground());
+	    		      if (C != null)
+	    		        fontLabel.setForeground(C);
+	    	    }
+	    	    if (src == BackGButton)
+	    	    {
+	    	    	 Color B = JColorChooser.showDialog(null, "Choose Background Color", fontLabel.getBackground());
+	    		      if (B != null)
+	    		    	  fontLabel.setBackground(B);
+	    		      	fontLabel.setOpaque(true);
+	    	    }
+	  
+}
+  }
+}
